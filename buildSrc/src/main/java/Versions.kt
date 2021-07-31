@@ -23,7 +23,7 @@
 object Versions {
 
     // Base
-    const val gradle = "4.1.3"
+    const val gradle = "4.2.2"
     const val kotlin = "1.4.32"
 
     // Decoder
