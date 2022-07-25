@@ -42,7 +42,7 @@ data class Rule(
     val region: String?
 ) {
     fun getDescriptionFor(languageCode: String): String {
-        val description = descriptions[languageCode.toLowerCase(Locale.ROOT)]
+        val description = descriptions[languageCode.lowercase()]
         return if (description?.isNotBlank() == true) description else descriptions[Locale.ENGLISH.language]
             ?: ""
     }

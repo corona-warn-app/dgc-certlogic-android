@@ -56,7 +56,7 @@ class DefaultCountriesRepository(
 
     override suspend fun preLoadCountries(countriesUrl: String) {
         remoteDataSource.getCountries(countriesUrl)
-            .map { it.toLowerCase(Locale.ROOT) }
+            .map { it.lowercase() }
             .apply { localDataSource.updateCountries(this) }
     }
 

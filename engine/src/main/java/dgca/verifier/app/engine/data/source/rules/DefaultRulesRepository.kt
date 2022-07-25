@@ -48,7 +48,7 @@ class DefaultRulesRepository(
         val rulesToBeSaved = mutableListOf<Rule>()
         upToDateRuleIdentifiers.forEach { ruleIdentifier ->
             try {
-                remoteDataSource.getRule("$rulesUrl/${ruleIdentifier.country.toLowerCase(Locale.ROOT)}/${ruleIdentifier.hash}")
+                remoteDataSource.getRule("$rulesUrl/${ruleIdentifier.country.lowercase()}/${ruleIdentifier.hash}")
                     ?.let { rule ->
                         ruleIdentifiersToBeSaved.add(ruleIdentifier)
                         rulesToBeSaved.add(rule)

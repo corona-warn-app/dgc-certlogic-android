@@ -28,6 +28,6 @@ import java.util.*
 fun RuleIdentifierRemote.toRuleIdentifier(): RuleIdentifier = RuleIdentifier(
     identifier = this.identifier,
     version = this.version,
-    country = this.country.toLowerCase(Locale.ROOT),
+    country = this.country.lowercase(),
     hash = this.hash
 )

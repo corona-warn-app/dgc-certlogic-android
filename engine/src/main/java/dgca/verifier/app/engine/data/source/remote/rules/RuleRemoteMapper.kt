@@ -51,18 +51,18 @@ import java.util.*
  */
 fun RuleRemote.toRule(): Rule = Rule(
     identifier = this.identifier,
-    type = Type.valueOf(this.type.toUpperCase(Locale.ROOT)),
+    type = Type.valueOf(this.type.uppercase()),
     version = this.version,
     schemaVersion = this.schemaVersion,
     engine = this.engine,
     engineVersion = this.engineVersion,
-    ruleCertificateType = RuleCertificateType.valueOf(this.certificateType.toUpperCase(Locale.ROOT)),
+    ruleCertificateType = RuleCertificateType.valueOf(this.certificateType.uppercase()),
     descriptions = this.descriptions.toDescriptions(),
     validFrom = this.validFrom,
     validTo = this.validTo,
     affectedString = this.affectedString,
     logic = this.logic,
-    countryCode = this.countryCode.toLowerCase(Locale.ROOT),
+    countryCode = this.countryCode.lowercase(),
     region = this.region
 )
 
@@ -84,7 +84,7 @@ fun List<DescriptionRemote>.toDescriptions(): Map<String, String> {
     val descriptions = mutableMapOf<String, String>()
     for (i in this.indices) {
         val descriptionRemote = this[i]
-        descriptions[descriptionRemote.lang.toLowerCase(Locale.ROOT)] = descriptionRemote.desc
+        descriptions[descriptionRemote.lang.lowercase()] = descriptionRemote.desc
     }
     return descriptions
 }
